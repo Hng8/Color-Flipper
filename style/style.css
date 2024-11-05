@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background 0.5s ease;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+
+header h1 {
+    user-select: none;
+    transition: 0.5s ease;
+    text-align: center;
+    margin: 70px 0;
+    
+
+}
+
+.container div {
+    padding: 20px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+    user-select: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container .green {
+    background-color: #34c634;
+    
+}
+.container .red {
+    background-color: red;
+}
+.container .blue {
+    background-color: royalblue;
+}
+.container .random {
+    background-color: white;
+    color: black;
+}
+
+.container .custom {
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    color: white;
+    position: relative;
+    display: inline-block;
+    
+}
+
+/* Showing the tooltip */
+.container .toolText {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 12px;
+
+    /* Postion the otlltip */
+    position: absolute;
+    z-index: 1;
+    top: -50px;
+    left: -90%;
+}
+
+.container .toolText::after {
+    content: "";
+    position: absolute;
+    top: 95%;
+    right: 1%;
+    /* margin-left: 19px; */
+    border-width: 8px 8px 8px 8px;
+    border-style: solid;
+    border-color: #333333 transparent transparent transparent;
+    /* width: 8px; */
+    height: 10px;
+    color: black;
+}
+.container .custom:hover .toolText,
+.container .auto:hover .toolText {
+    visibility: visible;
+}
+
+.container .auto {
+    background: black;
+    color: white;
+    position: relative;
+    display: inline-block;
+    
+}
+
+
+.input {
+    display: flex;
+    justify-content: center;
+    margin: 70px  auto 0px;
+    
+    
+}
+
+.input .custom-color {
+    border: none;
+    padding: 10px;
+    background: #fbfbfb;
+    outline: none;
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.input .custom-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+footer .notifi {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* background: springgreen; */
+    padding: 14px;
+    border-radius: 14px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+footer .success {
+    background: springgreen;
+}
+
+footer .error {
+    background: red;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-60%, 50px); /*starts 50px lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-60%, 0); /* moves to orignial postion */
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.show {
+    display: block;
+    animation: slideIn 0.5s forwards; /* Show with sliding effect */
+}
+
+/* fadeOut animation */
+.fade {
+    animation: fadeOut 1s forwards; /* Fades out in 1 second */
+}
+
+
+/* Combine section */
+.colorPicker {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 30px 0;
+    gap: 15px;
+}
+
+.colorPicker h3 {
+    width: 100%;
+    text-align: center;
+}
+
+/* Media queires */
+@media screen and (max-width: 613px) {
+    footer .notifi {
+        bottom: 5px;
+        transform: translateX(-60%);
+        /* background: springgreen; */
+        padding: 10px;
+    }
+}
+
+/* Scroll */

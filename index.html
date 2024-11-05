@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/normalize.css">
+
+    <!-- Add Colord and/or TinyColor2 via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tinycolor2@1.6.0/cjs/tinycolor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinycolor/1.4.2/tinycolor.min.js"></script>
+    <title>Color Flipper</title>
+</head>
+<body>
+    <header><h1 id="header">Color Flipper</h1></header>
+    <div class="container">
+        <div class="green" id="green" data-color="#34c634">Green</div>
+        <div class="red" id="red" data-color="red">Red</div>
+        <div class="blue" id="blue" data-color="royalblue">Blue</div>
+        <div class="random" id="random">Random</div>
+        <div class="custom" id="custom" >Custom
+            <span class="toolText">Add custom colors then click</span>
+        </div>
+        <div onclick="startAutoColor()" class="auto" id="auto" >Auto
+            <span class="toolText">Custom colors will change automatically</span>
+        </div>
+    </div>
+    <div class="input">
+        <input class="custom-color" id="custom-color" type="text" placeholder="Add color name">
+        <button type = "submit" class="custom-btn" onclick="colorSub()" id="color-sub"><img src="imgs/checked.png" alt=""></button>
+    </div>
+    <section class="colorPicker">
+        <h3>Combine two colors to get a new color</h3>
+        <!-- <label for="favColor1">1st color:</label> -->
+        <input id="favColor1" type="color" name="favColor1" value="#000000">
+        <span>+</span>
+        <!-- <label for="favColor2">2nd color:</label> -->
+        <input id="favColor2"  type="color" name="favColor2" value="#ffffff">
+        <span>:</span>
+        <p><input type="submit" onclick="combineColors()" value="submit" id="combine"></p>
+    </section>
+    <footer>
+        <div id="notifi-succ" class="notifi success">Your color saved successfully</div>
+        <div id="notifi-false" class="notifi error">You should add a valid color</div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
